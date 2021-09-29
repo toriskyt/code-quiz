@@ -44,37 +44,38 @@ var questions = [
         choices: [
             "High-level list", "Class", "Semantic Element"
         ],
-        answer: "a"
+        answer: "High-level list"
     },
     {
         question: "Which is a semantic tag?",
         choices: [
             "Div", "Header", "Span"
         ],
-        answer: "b"
+        answer: "Header"
     },
     {
         question: "A form is used to...",
         choices: [
             "Add context to a page", "Create a media link", "Collect user input"
         ],
-        answer: "c"
+        answer: "Collect user input"
     },
     {
         question: "An HTML form element can contain...",
         choices: [
             "Input", "Output", "Both Input and Output"
         ],
-        answer: "c"
+        answer: "Both Input and Output"
     },
     {
         question: "The correct document type for HTML is...",
         choices: [
             "!DOCTYPE html", "CSS", "JS"
         ],
-        answer: "a"
+        answer: "!DOCTYPE html"
     },
 ]
+
 function makeQuizcard(){
     var quizText = document.createElement("h2");
     var choiceBox = document.getElementById("choiceBox");
@@ -92,21 +93,23 @@ function makeQuizcard(){
 }
 
 function checkAnswer() {
-    console.log(this.value);
+    alert(this.value);
 if(this.value !== questions[Q].answer) {
-    console.log("wrong");
+    alert("Incorrect");
 }
 else {
-    console.log("right");
+    alert("Correct!");
 }
+
 Q++; 
 if(Q === questions.length) {
     console.log("End game");
+    alert("Game over!")
 }
 makeQuizcard();
 }
 
-console.log("What the heck is going on??")
+
 
 
 
@@ -120,23 +123,6 @@ console.log("What the heck is going on??")
 
 // document.body.appendChild(imgTag);
 
-// function countdown() {
-//     var timeLeft = 50;
-  
-//     var timeInterval = setInterval(function () {
-  
-//       timeLeft--;
-//       console.log(timeLeft);
-      
-//       timerEl.textContent = `${timeLeft} seconds left`;
-  
-//       if(timeLeft <= 0){
-//         clearInterval(timeInterval);
-  
-//         displayMessage();
-//       }
-//     }, 1000);
-//   }
 
 
 // AS A coding boot camp student
@@ -156,7 +142,6 @@ console.log("What the heck is going on??")
     // create timer
     // create buttons w/multiple choice questions
 // WHEN I answer a question
-    // create input
 // THEN I am presented with another question
     // create second prompt
 // WHEN I answer a question incorrectly
