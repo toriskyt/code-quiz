@@ -16,6 +16,7 @@ startbutton.addEventListener("click", function() {
     var startbox = document.getElementById("startbox");
     startbox.setAttribute("class", "hide");
     quizbox.removeAttribute("class");
+    setTime()
     makeQuizcard();
 });
 
@@ -30,13 +31,12 @@ function setTime() {
         if (secondsLeft === 0) {
             // Stops execution of action at set interval
             clearInterval(timerInterval);
-            checkIfLost();
+            endGame ()
         }
 
     }, 1000);
 }
 
-setTime()
 
 var questions = [
     {
@@ -93,22 +93,26 @@ function makeQuizcard(){
 }
 
 function checkAnswer() {
-    alert(this.value);
+    console.log(this.value);
 if(this.value !== questions[Q].answer) {
-    alert("Incorrect");
+    console.log("Incorrect");
 }
 else {
-    alert("Correct!");
+    console.log("Correct!");
 }
 
 Q++; 
 if(Q === questions.length) {
     console.log("End game");
-    alert("Game over!")
+    gameOver ();
+} else {
+  makeQuizcard();
 }
-makeQuizcard();
 }
-
+function gameOver() {
+    questionBox.innerHTML = "";
+    choiceBox.innerHTML = "";  
+}
 
 
 
